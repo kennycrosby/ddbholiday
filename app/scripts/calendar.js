@@ -79,7 +79,8 @@ var cal = cal || {
         date: pad(date), 
         videoUrl: currentGram.videos.standard_resolution.url, 
         imageUrl: currentGram.images.standard_resolution.url, 
-        caption: currentGram.caption.text
+        caption: currentGram.caption.text.parseHashtag(),
+        captionPlain: currentGram.caption.text
       };
       var html    = template(context);
       $('.modal-content').html(html);

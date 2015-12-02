@@ -33,6 +33,13 @@
     }
     h3 {
       color: #fff;
+      font-family: 'proxima_novaregular';
+      font-size: 1.3em;
+      line-height: 1.5em;
+      a {
+        font-family: 'proxima_novabold';
+        color: #fff;
+      }
     }
     .box {
       overflow: hidden;
@@ -44,6 +51,13 @@
       }
       .share {
         margin: 15px 0px 0 0;
+        ul {
+          li {
+            a {
+              margin: 0 0 0 20px;
+            }
+          }
+        }
         svg {
           path {
             fill: #C41039;

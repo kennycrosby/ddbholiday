@@ -35,6 +35,13 @@ $('.footer').parallaxify({
   alphaPosition: 0.025,
 });
 
+String.prototype.parseHashtag = function() {
+  return this.replace(/[#]+[A-Za-z0-9-_]+/g, function(t) {
+    var tag = t;
+    return '<a href="https://www.instagram.com/'+ tag + '" target="_blank">' + tag + '</a>';
+  });
+};
+
 
 
 

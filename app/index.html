@@ -461,7 +461,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <video width="480" height="480" autoplay loop muted id="videocontainer">
+        <video autoplay loop muted id="videocontainer">
         <source src="{{videoUrl}}" 
           type="video/mp4"/>
         </video>
@@ -469,12 +469,12 @@
           <span>{{date}}</span>
           <div class="share">
             <ul>
-              <li><a class="fbsharecontent" href="#" data-text="{{caption}}" data-imgurl="{{imageUrl}}">@@include('partials/icon-facebook.html')</a></li>
-              <li><a class="twsharecontent" href="#" data-text="{{caption}}">@@include('partials/icon-twitter.html')</a></li>
+              <li><a class="fbsharecontent" href="#" data-text="{{captionPlain}}" data-imgurl="{{imageUrl}}">@@include('partials/icon-facebook.html')</a></li>
+              <li><a class="twsharecontent" href="#" data-text="{{captionPlain}}">@@include('partials/icon-twitter.html')</a></li>
             </ul>
           </div>
         </div>
-        <h3>{{caption}}</h3>
+        <h3>{{{caption}}}</h3>
       </div>
     </script>
     
