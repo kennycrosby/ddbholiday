@@ -4,7 +4,7 @@ var share = share || {
 
   init : function() {
 
-    var url = 'http://kennycrosby.com/',
+    var url = 'http://ddbsfadvent.herokuapp.com/',
         title = 'DDB Ad-Vent Calendar ',
         desc = 'Giving you the GIF(t) of agency life.',
         image = url + 'images/facebook-share.jpg';
