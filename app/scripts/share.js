@@ -53,7 +53,7 @@ var share = share || {
 
       FB.ui({
           method: 'feed',
-          link: 'http://localhost:9000',
+          link: url,
           caption: 'An example caption'
           // link: url,
           // caption: $(this).data('text'),
