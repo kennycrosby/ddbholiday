@@ -7,8 +7,8 @@ var snow = snow || {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
 
-    var W = 900;
-    var H = 700;
+    var W = $(document.body).width();
+    var H = $(document.body).height();
     canvas.width = W;
     canvas.height = H;
 
@@ -18,7 +18,7 @@ var snow = snow || {
       flakes.push({
         x: Math.random()*W,
         y: Math.random()*H,
-        radius: Math.random()*6+1
+        radius: Math.random()*8+1
       })
     }
 

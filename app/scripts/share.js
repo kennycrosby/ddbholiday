@@ -50,25 +50,23 @@ var share = share || {
       e.preventDefault();
 
       var url = window.location.href;
-
       FB.ui({
           method: 'feed',
           link: url,
           caption: $(this).data('text'),
           picture: $(this).data('imgurl')
-        }, function(response){});
-        console.log('done???')
-      });
+        }, function(response){
+          console.log('done???', response)
+        });
+
+    });
 
     $(document.body).on('click', '.twsharecontent', function(e){
       e.preventDefault();
       sendTweet(this);
     });
 
-
   }
-
-  
 }
 
 function sendTweet(clickedEl) {
@@ -82,11 +80,11 @@ function sendTweet(clickedEl) {
           '&hashtags='+
           'ddbsfadvent';
 
-      var winWidth = 520,
-          winHeight = 350,
-          winTop = (screen.height / 2) - (winHeight / 2),
-          winLeft = (screen.width / 2) - (winWidth / 2);
+  var winWidth = 520,
+      winHeight = 350,
+      winTop = (screen.height / 2) - (winHeight / 2),
+      winLeft = (screen.width / 2) - (winWidth / 2);
 
-      window.open(twShareContentUrl, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+  window.open(twShareContentUrl, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
 
 }

@@ -48,7 +48,9 @@ var cal = cal || {
     $(document.body).on('click', '.passed .ch-item', function(){
       $(this).addClass('open');
       var clickedDate = $(this).data('date');
-      self.setModal(clickedDate);
+      if (self.allGrams[clickedDate-1] ) {
+        self.setModal(clickedDate);  
+      };
     });
 
     $('#modal').on('shown.bs.modal', function () {
@@ -58,19 +60,33 @@ var cal = cal || {
     $('#modal').on('hidden.bs.modal', function () {
       $('.ch-item').removeClass('open');
       $('.modal-dialog').css('height', 'auto');
+      var vid = document.getElementById('videocontainer'); 
+      if (vid) {};
+      vid.pause();
       window.location.hash = '/';
     });
 
   },
 
+
+
   setModal : function(date) {
     window.location.hash = '/day/'+date;
     var self = this;
     var currentGram = self.allGrams[date-1];
-    var context = { date: pad(date), url: currentGram.images.standard_resolution.url, caption: currentGram.caption.text };
-    var html    = template(context);
-    $('.modal-content').html(html);
-    $('#modal').modal('show');
+
+    if (currentGram) {
+      var context = { 
+        date: pad(date), 
+        url: currentGram.videos.standard_resolution.url, 
+        caption: currentGram.caption.text 
+      };
+      var html    = template(context);
+      $('.modal-content').html(html);
+      $('#modal').modal('show');
+    } else {
+
+    }
   },
 
   popData : function(grams) {
@@ -106,11 +122,11 @@ var cal = cal || {
 
     console.log('Today is ' + month[m] + n);
 
-    // if (m === 11) {
-    //   return n;
-    // } else {
-    //   return 25;
-    // }
+    if (m === 11) {
+      return n;
+    } else {
+      return 25;
+    }
 
     return 20;
 
@@ -120,7 +136,7 @@ var cal = cal || {
 function getData() {
 
   var client_id = '68e4108b43354b028b96be615901fab1';
-  var tag = 'christmas';
+  var tag = 'ddbsfadvent';
   var gramUrl = 'https://api.instagram.com/v1/tags/' + tag +'/media/recent?';
   var requestData = { client_id: client_id, count: 25 };
 
@@ -135,6 +151,7 @@ function getData() {
 
       var data = response.data;
       dfd.resolve( data );
+      console.log('data', data);
 
     }).error(function(xhr, status, err){
       console.log('Error getting the data: ', err.toString());
