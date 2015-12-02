@@ -54,10 +54,8 @@ var share = share || {
       FB.ui({
           method: 'feed',
           link: url,
-          caption: 'An example caption'
-          // link: url,
-          // caption: $(this).data('text'),
-          // picture: $(this).data('imgurl')
+          caption: $(this).data('text'),
+          picture: $(this).data('imgurl')
         }, function(response){});
         console.log('done???')
       });
