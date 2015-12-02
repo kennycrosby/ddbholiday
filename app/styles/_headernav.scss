@@ -1,0 +1,58 @@
+header {
+  text-align: center;
+  color: $fontred;
+  svg {
+    display: block;
+    max-width: 400px;
+    margin: 20px auto;
+    .st0 { fill:#FBDFE8; }
+    .st1 { fill:#8A0021; }
+  }
+  p {
+    font-size: 1.5em;
+  }
+}
+
+nav {
+  overflow: hidden;
+  .ddblogo {
+    float: left;
+    margin: 25px 0 0 30px;
+    svg {
+      width: 60px;
+      .st0{fill:#540000;}
+      .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#540000;}  
+    }
+  }
+}
+
+.share {
+  float: right;
+  margin: 25px 30px 0 0;
+  ul {
+    margin: 0;
+    list-style: none;
+    li {
+      float: left;
+      a {
+        width: 25px;
+        margin: 0 20px;
+        &:hover {
+          svg {
+            path {
+              fill-opacity: 0.5;
+            }
+          }
+        }
+        svg {
+          width: 25px;
+          height: 25px;
+          path {
+            transition: all 0.5s ease;
+            fill:#540000;
+          }
+        }
+      }
+    }
+  }
+}

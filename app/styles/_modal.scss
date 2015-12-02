@@ -1,0 +1,54 @@
+.modal-dialog {
+  background: none;
+  @media (min-width: 768px) {
+    max-width: 640px;
+  }
+  overflow: scroll;
+  .modal-header {
+    border: none;
+    margin: 0;
+    padding: 0;
+    .close {
+      text-shadow: none;
+      color: #C41039;
+      opacity: 1;
+      font-size: 60px;
+    }
+  }
+  .modal-content {
+    background: none;
+    box-shadow: none;
+    border: none;
+    img {
+      margin: 10px auto;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    h3 {
+      color: #fff;
+    }
+    .box {
+      overflow: hidden;
+      span {
+        font-size: 45px;
+        color: #C41039;
+        font-family: 'proxima_novabold';
+        float: left;
+      }
+      .share {
+        margin: 15px 0px 0 0;
+        svg {
+          path {
+            fill: #C41039;
+          }
+        }
+      }
+    }
+    
+  }
+}
+
+.modal-backdrop.in {
+  opacity: 0.7;
+}

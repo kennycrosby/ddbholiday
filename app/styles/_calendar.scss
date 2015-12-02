@@ -1,0 +1,28 @@
+.cal {
+  .row {
+    border-bottom: 1px dashed #B10A32;
+    padding: 25px 0;
+    > div {
+      height: 140px;
+      h2 {
+        line-height: 140px;
+        margin: 0;
+        white-space: nowrap;
+        vertical-align: middle;
+        text-align: center;
+        font-family: 'proxima_novabold';
+        color: $fontmuted;
+      }
+      &.passed {
+        h2 {
+          color: $fontdark;
+        }
+      }
+      &.active {
+        h2 {
+          color: $white;
+        }
+      }
+    }  
+  }
+}

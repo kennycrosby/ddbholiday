@@ -1,0 +1,41 @@
+.footer {
+  margin: 60px 0 0 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .layer {
+    width: 100%;
+    position: absolute;
+    width: 120%;
+    bottom: -10px;
+    left: -5%;
+    &.one {
+      z-index: 20;
+      position: relative;
+      svg {
+        .st0 { fill-rule:evenodd;clip-rule:evenodd;fill:#9D032A;}
+      }
+    }
+    &.two {
+      z-index: 10;
+      svg {
+        .st0 { fill-rule:evenodd;clip-rule:evenodd;fill:#B00A32;}
+      }
+    }
+    &.three {
+      z-index: 5;
+      svg {
+        .st0 { fill-rule:evenodd;clip-rule:evenodd;fill:#C31039;}
+      }
+    }
+    &.four {
+      z-index: 1;
+      svg {
+        .st0 { fill-rule:evenodd;clip-rule:evenodd;fill:#D71440;}
+      }
+    }
+    svg {
+      fill-opacity: 0.95;
+    }
+  }
+}
