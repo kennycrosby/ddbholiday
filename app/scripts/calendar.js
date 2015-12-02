@@ -61,7 +61,6 @@ var cal = cal || {
       $('.ch-item').removeClass('open');
       $('.modal-dialog').css('height', 'auto');
       var vid = document.getElementById('videocontainer'); 
-      if (vid) {};
       vid.pause();
       window.location.hash = '/';
     });
@@ -78,8 +77,9 @@ var cal = cal || {
     if (currentGram) {
       var context = { 
         date: pad(date), 
-        url: currentGram.videos.standard_resolution.url, 
-        caption: currentGram.caption.text 
+        videoUrl: currentGram.videos.standard_resolution.url, 
+        imageUrl: currentGram.images.standard_resolution.url, 
+        caption: currentGram.caption.text
       };
       var html    = template(context);
       $('.modal-content').html(html);

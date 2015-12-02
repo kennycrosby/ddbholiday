@@ -462,14 +462,14 @@
       </div>
       <div class="modal-body">
         <video width="480" height="480" autoplay loop muted id="videocontainer">
-        <source src="{{url}}" 
+        <source src="{{videoUrl}}" 
           type="video/mp4"/>
         </video>
         <div class="box">
           <span>{{date}}</span>
           <div class="share">
             <ul>
-              <li><a class="fbsharecontent" href="#" data-text="{{caption}}" data-imgurl="{{url}}">@@include('partials/icon-facebook.html')</a></li>
+              <li><a class="fbsharecontent" href="#" data-text="{{caption}}" data-imgurl="{{imageUrl}}">@@include('partials/icon-facebook.html')</a></li>
               <li><a class="twsharecontent" href="#" data-text="{{caption}}">@@include('partials/icon-twitter.html')</a></li>
             </ul>
           </div>
