@@ -76,9 +76,7 @@ function sendTweet(clickedEl) {
           '?url='+
           encodeURIComponent(url)+
           '&text='+
-          encodeURIComponent( $(clickedEl).data('text') )+
-          '&hashtags='+
-          'ddbsfadvent';
+          encodeURIComponent( $(clickedEl).data('text') );
 
   var winWidth = 520,
       winHeight = 350,
