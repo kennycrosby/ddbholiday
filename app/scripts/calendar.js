@@ -54,20 +54,23 @@ var cal = cal || {
     });
 
     $('#modal').on('shown.bs.modal', function () {
-      $('.modal-dialog').css('height', $('.modal-dialog').height() );
+      var vid = document.getElementById('videocontainer');
+      $('video').on('canplay', function(){
+        console.log('on can play');
+        $('.modal-dialog').css('height', $('.modal-dialog').outerHeight() + 100 );  
+      });
+      
     });
 
     $('#modal').on('hidden.bs.modal', function () {
       $('.ch-item').removeClass('open');
-      $('.modal-dialog').css('height', 'auto');
+      // $('.modal').css('height', 'auto');
       var vid = document.getElementById('videocontainer'); 
       vid.pause();
       window.location.hash = '/';
     });
 
   },
-
-
 
   setModal : function(date) {
     window.location.hash = '/day/'+date;

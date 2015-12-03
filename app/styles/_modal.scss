@@ -1,9 +1,14 @@
+.modal {
+  overflow: scroll;
+  height: inherit;
+}
+
 .modal-dialog {
   background: none;
+  overflow: auto;
   @media (min-width: 768px) {
     max-width: 640px;
   }
-  overflow: scroll;
   .modal-header {
     border: none;
     margin: 0;
