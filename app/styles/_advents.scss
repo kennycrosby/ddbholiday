@@ -24,6 +24,8 @@
 }
 
 .ch-info {
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
@@ -116,6 +118,7 @@
         color: rgba(255,242,34, 0.8);
       }
       .ch-item:hover .ch-info-front {
+        -webkit-transform: rotate3d(1,0,0,-95deg);
         transform: rotate3d(1,0,0,-95deg);
         box-shadow: 
           inset 0 0 5px rgba(255,255,255,0.2), 
@@ -130,7 +133,7 @@
         color: rgba(255,242,34, 0.8);
       }
       .ch-info-front {
-        transform: rotate3d(1,0,0,-95deg);
+        -webkit-transform: rotate3d(1,0,0,-95deg);
         box-shadow: 
           inset 0 0 5px rgba(255,255,255,0.2), 
           inset 0 0 3px rgba(0,0,0,0.3);
