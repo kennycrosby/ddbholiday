@@ -13,14 +13,14 @@ var share = share || {
         'http://www.facebook.com/sharer.php?s=100&p[title]='+ 
         title + 
         '&p[summary]=' + 
-        desc + 
+        'DDB San Francisco is giving the greatest gif(t) of all: a reaction gif about ad agency life every day \'til Christmas. Check out the Ad-vent Calendar ' + 
         '&p[url]=' + 
         url + 
         '&p[images][0]=' + 
         image;
 
     var twShareUrl = 'http://twitter.com/intent/tweet?status='+
-        title+
+        'I\'m counting down the days until Gifmas with the DDB Ad-Vent Calendar (get it?) at '+
         url;
     
     $(document.body).on('click', '.fbsharesite', function(e){

@@ -150,7 +150,7 @@ function getData() {
       data: requestData
     }).success(function(response) {
 
-      var data = response.data;
+      var data = response.data.reverse();
       dfd.resolve( data );
       console.log('data', data);
 
