@@ -460,20 +460,23 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <video autoplay loop muted id="videocontainer">
-        <source src="{{videoUrl}}" 
-          type="video/mp4"/>
-        </video>
-        <div class="box">
-          <span>{{date}}</span>
-          <div class="share">
-            <ul>
-              <li><a class="fbsharecontent" href="#" data-text="{{captionPlain}}" data-imgurl="{{imageUrl}}">@@include('partials/icon-facebook.html')</a></li>
-              <li><a class="twsharecontent" href="#" data-text="{{captionPlain}}">@@include('partials/icon-twitter.html')</a></li>
-            </ul>
+        <h3>{{{caption}}}</h3>
+        <div class="video-container">
+          
+          <video autoplay loop muted id="thevideo">
+            <source src="{{videoUrl}}" type="video/mp4"/>
+          </video>
+
+          <div class="box">
+            <span>{{date}}</span>
+            <div class="share">
+              <ul>
+                <li><a class="fbsharecontent" href="#" data-text="{{captionPlain}}" data-imgurl="{{imageUrl}}">@@include('partials/icon-facebook.html')</a></li>
+                <li><a class="twsharecontent" href="#" data-text="{{captionPlain}}">@@include('partials/icon-twitter.html')</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <h3>{{{caption}}}</h3>
       </div>
     </script>
     
