@@ -54,18 +54,20 @@ var cal = cal || {
     });
 
     $('#modal').on('shown.bs.modal', function () {
-      var vid = document.getElementById('videocontainer');
-      $('video').one('canplay', function(){
-        $('.modal-dialog').css('height', $('.modal-dialog').outerHeight() + 100 );  
+      var vid = document.getElementById('thevideo');
+      $('#thevideo').on('canplay', function(){
+        console.log('loaded');
+        $('.modal-dialog').css('height', $('.modal-dialog').outerHeight() + 60 );  
       });
+      $('.modal-dialog').css('height', $('.modal-dialog').outerHeight() + 60 );
       
     });
 
     $('#modal').on('hidden.bs.modal', function () {
       $('.ch-item').removeClass('open');
-      // $('.modal').css('height', 'auto');
-      var vid = document.getElementById('videocontainer'); 
-      vid.pause();
+      $('.modal-dialog').css('height', 'auto');
+      
+      $('video').find('source').attr('src', '');
       window.location.hash = '/';
     });
 
