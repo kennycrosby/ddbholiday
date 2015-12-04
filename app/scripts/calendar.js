@@ -55,8 +55,7 @@ var cal = cal || {
 
     $('#modal').on('shown.bs.modal', function () {
       var vid = document.getElementById('videocontainer');
-      $('video').on('canplay', function(){
-        console.log('on can play');
+      $('video').one('canplay', function(){
         $('.modal-dialog').css('height', $('.modal-dialog').outerHeight() + 100 );  
       });
       
@@ -124,8 +123,6 @@ var cal = cal || {
     month[10] = "November";
     month[11] = "December";
 
-    console.log('Today is ' + month[m] + n);
-
     if (m === 11) {
       return n;
     } else {
@@ -155,7 +152,6 @@ function getData() {
 
       var data = response.data.reverse();
       dfd.resolve( data );
-      console.log('data', data);
 
     }).error(function(xhr, status, err){
       console.log('Error getting the data: ', err.toString());

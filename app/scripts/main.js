@@ -17,6 +17,15 @@ var app = app || {
     var handheld = utils.presumeHandheld();
     if (!handheld) this.desktopFeatures();
 
+    // var $dates = $('.cal').find('.col-lg-1.date');
+    // $(window).resize(function(){
+
+    //   var width = $dates.find('.ch-item').css('width');
+    //   console.log(width);
+    //   $dates.find('.ch-item').height(width);
+
+    // });
+
   },
 
   desktopFeatures : function() {
