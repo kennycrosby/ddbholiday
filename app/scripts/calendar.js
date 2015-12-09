@@ -5,6 +5,8 @@ var $dates = $('div.date');
 var source   = $("#modal-template").html();
 var template = Handlebars.compile(source);
 
+var daysSoFar;
+
 var cal = cal || {
 
   allGrams : {},
@@ -13,7 +15,7 @@ var cal = cal || {
 
     var self = this;
     var currentDate = self.whichDay();
-    var daysSoFar = currentDate;
+    daysSoFar = currentDate;
 
     self.binds();
 
@@ -81,10 +83,9 @@ var cal = cal || {
     if (currentGram) {
       var context = { 
         date: pad(date), 
-        videoUrl: currentGram.videos.standard_resolution.url, 
-        imageUrl: currentGram.images.standard_resolution.url, 
-        caption: currentGram.caption.text.parseHashtag(),
-        captionPlain: currentGram.caption.text
+        imageUrl: currentGram.day,
+        caption: currentGram.caption.parseHashtag(),
+        captionPlain: currentGram.caption
       };
       var html    = template(context);
       $('.modal-content').html(html);
@@ -94,12 +95,12 @@ var cal = cal || {
     }
   },
 
-  popData : function(grams) {
+  popData : function(items) {
 
-    for(var i = 0; i < grams.length; i++) {
+    for(var i = 0; i < daysSoFar; i++) {
       var dateEl = $dates[i];
       $(dateEl).find('.ch-info-wrap').css({
-        'background-image': 'url(' + grams[i].images.low_resolution.url + ')'
+        'background-image': 'url(../images/gifs/day-' + items[i].day + '.gif)'
       });
     }
 
@@ -136,23 +137,23 @@ var cal = cal || {
   }
 }
 
+
 function getData() {
 
-  var client_id = '68e4108b43354b028b96be615901fab1';
-  var tag = 'ddbsfadvent';
-  var gramUrl = 'https://api.instagram.com/v1/tags/' + tag +'/media/recent?';
-  var requestData = { client_id: client_id, count: 25 };
+  console.log('getting data');
 
+  var url = '/json/days.json';
   var dfd = $.Deferred();
 
   $.ajax({
-      url: gramUrl,
+      url: url,
       type: 'GET',
-      dataType: 'jsonp',
-      data: requestData
-    }).success(function(response) {
+      dataType: 'json'
+    }).success(function(data) {
 
-      var data = response.data.reverse();
+      console.log('data', data);
+
+      // var data = response.data.reverse();
       dfd.resolve( data );
 
     }).error(function(xhr, status, err){
@@ -163,6 +164,35 @@ function getData() {
     return dfd.promise();
 
 }
+
+
+// function getData() {
+
+//   var client_id = '68e4108b43354b028b96be615901fab1';
+//   var tag = 'ddbsfadvent';
+//   var gramUrl = 'https://api.instagram.com/v1/tags/' + tag +'/media/recent?';
+//   var requestData = { client_id: client_id, count: 25 };
+
+//   var dfd = $.Deferred();
+
+//   $.ajax({
+//       url: gramUrl,
+//       type: 'GET',
+//       dataType: 'jsonp',
+//       data: requestData
+//     }).success(function(response) {
+
+//       var data = response.data.reverse();
+//       dfd.resolve( data );
+
+//     }).error(function(xhr, status, err){
+//       console.log('Error getting the data: ', err.toString());
+//       dfd.reject();
+//     });
+
+//     return dfd.promise();
+
+// }
 
 function pad(d) {
     return (d < 10) ? '0' + d.toString() : d.toString();

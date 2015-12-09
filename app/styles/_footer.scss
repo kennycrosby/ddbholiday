@@ -6,9 +6,14 @@
   .layer {
     width: 100%;
     position: absolute;
-    width: 120%;
+    // Desktop
+    @media (min-width: 992px) { 
+      width: 120%;
+      left: -5%;
+    }
+    widows: 100%;
     bottom: -10px;
-    left: -5%;
+    left: 0;
     &.one {
       z-index: 20;
       position: relative;
