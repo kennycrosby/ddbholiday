@@ -83,7 +83,7 @@ var cal = cal || {
     if (currentGram) {
       var context = { 
         date: pad(date), 
-        imageUrl: currentGram.day,
+        imageUrl: '/images/gifs/day-'+currentGram.day+'.gif',
         caption: currentGram.caption.parseHashtag(),
         captionPlain: currentGram.caption
       };

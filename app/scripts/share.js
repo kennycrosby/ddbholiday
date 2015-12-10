@@ -28,7 +28,6 @@ var share = share || {
     
     $(document.body).on('click', '.fbsharesite', function(e){
       e.preventDefault();
-
       var winWidth = 520,
           winHeight = 350,
           winTop = (screen.height / 2) - (winHeight / 2),
@@ -39,7 +38,6 @@ var share = share || {
 
     $(document.body).on('click', '.twsharesite', function(e){
       e.preventDefault();
-
       var winWidth = 520,
           winHeight = 350,
           winTop = (screen.height / 2) - (winHeight / 2),
@@ -51,13 +49,15 @@ var share = share || {
     // Share specific content
     $(document.body).on('click', '.fbsharecontent', function(e){
       e.preventDefault();
-
       var url = window.location.href;
+
+      console.log('http://advent.ddbcalifornia.com' + $(this).data('imgurl'));
+
       FB.ui({
           method: 'feed',
           link: url,
           caption: $(this).data('text'),
-          picture: $(this).data('imgurl')
+          picture: 'http://advent.ddbcalifornia.com' + $(this).data('imgurl')
         }, function(response){
           // console.log('done???', response)
         });
